@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title%}Flask Platzi |{% endblock%}
+
+{% extends "bootstrap/base.html" %}
+{% block head %}
+    {{ super() }}
+    <title>{% block title%}Flask Platzi |{% endblock %}
 
     </title>
     <link rel="stylesheet" href="../static/css/style.css">
-</head>
-<body>
-    <header>
-        {%include "navbar.html"%}
-    </header>
-{% block content %}
-{% endblock %}
-</body>
-</html>
+
+{%endblock%}
+
+{% block body %}
+    {% block navbar %}
+        {% include "navbar.html" %}
+    {%endblock%}
+
+
+    {% block content %}
+    {% endblock %}
+{%endblock%}
+
